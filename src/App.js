@@ -1,10 +1,22 @@
 import React from "react";
+import PizzaForm from "./components/Pages/orderPage/PizzaForm";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import HomePage from "./components/Pages/HomePage";
+import SuccessPage from "./components/Pages/SuccessPage";
 
 const App = () => {
   return (
     <>
-      <h1>Teknolojik Yemekler</h1>
-      <p>Burdaki kodu silip kendi headerınızı ekleyebilirsiniz</p>
+      <Router>
+        <Switch>
+          <Route path="/pizza/success" component={SuccessPage} />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/pizza">
+            {" "}
+            <PizzaForm id="pizza-form" />{" "}
+          </Route>
+        </Switch>
+      </Router>
     </>
   );
 };
