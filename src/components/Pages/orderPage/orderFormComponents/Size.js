@@ -9,16 +9,34 @@ function Size({ onSizeChange, error }) {
     <div>
       <h4>Boyut Sec</h4>
       <label>
-        <input type="radio" name="size" value="kucuk" onChange={handleChange} />
-        Küçük
-      </label>
-      <label>
-        <input type="radio" name="size" value="orta" onChange={handleChange} />
-        Orta
-      </label>
-      <label>
-        <input type="radio" name="size" value="buyuk" onChange={handleChange} />
-        Büyük
+        {" "}
+        <li>
+          <input
+            type="radio"
+            name="size"
+            value="kucuk"
+            onChange={handleChange}
+          />
+          Küçük
+        </li>
+        <li>
+          <input
+            type="radio"
+            name="size"
+            value="orta"
+            onChange={handleChange}
+          />
+          Orta
+        </li>
+        <li>
+          <input
+            type="radio"
+            name="size"
+            value="buyuk"
+            onChange={handleChange}
+          />
+          Büyük
+        </li>
       </label>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>

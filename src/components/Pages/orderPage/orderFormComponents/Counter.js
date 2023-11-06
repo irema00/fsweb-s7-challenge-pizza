@@ -1,19 +1,27 @@
 import React from "react";
+import css from "../PizzaForm.css";
 
 const Counter = ({ count, onCountChange }) => {
-  const handleIncrement = () => {
+  const handleIncrement = (e) => {
+    e.preventDefault();
+
     onCountChange(count + 1);
   };
 
-  const handleDecrement = () => {
+  const handleDecrement = (e) => {
+    e.preventDefault();
     onCountChange(count > 1 ? count - 1 : 1);
   };
 
   return (
-    <div>
-      <button onClick={handleDecrement}>-</button>
+    <div className="counter-container">
+      <button type="button" onClick={handleDecrement}>
+        -
+      </button>
       <span>{count}</span>
-      <button onClick={handleIncrement}>+</button>
+      <button type="button" onClick={handleIncrement}>
+        +
+      </button>
     </div>
   );
 };

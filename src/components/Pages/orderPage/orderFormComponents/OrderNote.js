@@ -11,13 +11,18 @@ function OrderNote({ onNoteChange, error }) {
 
   return (
     <>
-      <label htmlFor="order-note">Siparis Notu</label>
-      <textarea
+      <label htmlFor="order-note">
+        {" "}
+        <h4>Siparis Notu</h4>
+      </label>
+      <input
+        type="text"
         id="order-note"
         value={note}
         onChange={handleNoteChange}
         placeholder="Siparisine eklemek istediğin bir not var mi?"
-      ></textarea>
+      ></input>
+      <hr />
       {error && <p style={{ color: "red" }}>{error}</p>}
     </>
   );

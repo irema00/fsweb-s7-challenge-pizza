@@ -9,6 +9,7 @@ import OrderNote from "./orderFormComponents/OrderNote";
 import TotalPrice from "./orderFormComponents/TotalPrice";
 import PizzaInformation from "./orderFormComponents/PizzaInformation";
 import NameInput from "./orderFormComponents/NameInput";
+import css from "./PizzaForm.css";
 
 const PizzaForm = () => {
   const basePrice = 85.5;
@@ -25,8 +26,11 @@ const PizzaForm = () => {
   };
 
   const [order, setOrder] = useState(initialOrder);
+
   const validationSchema = yup.object().shape({
     count: yup
+
+      //unnecessary?
       .number()
       .required("Adet gerekli.")
       .min(1, "En az 1 pizza siparişi verilmeli."),
@@ -116,9 +120,8 @@ const PizzaForm = () => {
 
   return (
     <>
-      <h2>Pizza Formu</h2>
-      <div className="grid-container">
-        <Form id="pizza-form" onSubmit={handleSubmit}>
+      <div className="form-container">
+        <Form id="pizza-form">
           <div className="grid-item-info">
             <PizzaInformation
               name="Acili Pizza"
@@ -127,6 +130,22 @@ const PizzaForm = () => {
               rating={4.5}
               commentCount={200}
             />{" "}
+          </div>
+          <div className="size-dough-container">
+            <div className="grid-item-size">
+              <Size
+                id="size-dropdown"
+                onSizeChange={(size) => handleChange("size", size)}
+                error={errors.size}
+              />
+            </div>
+            <div className="grid-item-dough">
+              <Dough
+                id="dough-dropdown"
+                onDoughChange={(dough) => handleChange("dough", dough)}
+                error={errors.dough}
+              />
+            </div>
           </div>
           <div className="grid-item-ingredients">
             <ExtraIngredients
@@ -138,20 +157,6 @@ const PizzaForm = () => {
               error={errors.selectedIngredients}
             />
           </div>
-          <div className="grid-item-size">
-            <Size
-              id="size-dropdown"
-              onSizeChange={(size) => handleChange("size", size)}
-              error={errors.size}
-            />
-          </div>
-          <div className="grid-item-dough">
-            <Dough
-              id="dough-dropdown"
-              onDoughChange={(dough) => handleChange("dough", dough)}
-              error={errors.dough}
-            />
-          </div>
           <div className="grid-item-note">
             <OrderNote
               id="order-note"
@@ -159,23 +164,26 @@ const PizzaForm = () => {
               error={errors.specialNote}
             />
           </div>
-          <Counter
-            count={order.count}
-            onCountChange={(newCount) => handleChange("count", newCount)}
-          />
-
           <NameInput
             id="name-input"
             onNameChange={(name) => handleChange("name", name)}
             error={errors.name}
-          />
-          <TotalPrice
-            basePrice={basePrice * order.count}
-            selectedIngredients={order.selectedIngredients}
-          />
-          <button id="order-button" type="submit">
-            Siparis Ver
-          </button>
+          />{" "}
+          <div className="counter-totalPrice">
+            <Counter
+              count={order.count}
+              onCountChange={(newCount) => handleChange("count", newCount)}
+            />{" "}
+            <div className="order-box">
+              <TotalPrice
+                basePrice={basePrice * order.count}
+                ingredientsPrice={ingredientsPrice}
+              />
+              <button id="order-button" type="submit" onClick={handleSubmit}>
+                Siparis Ver
+              </button>
+            </div>{" "}
+          </div>
         </Form>{" "}
       </div>
     </>

@@ -3,7 +3,9 @@ import React from "react";
 const NameInput = ({ onNameChange, error }) => {
   return (
     <div>
-      <label htmlFor="name">İsminizi Yazın</label>
+      <label htmlFor="name">
+        <h4>İsminizi Yazın</h4>
+      </label>
       <input
         type="text"
         id="name"

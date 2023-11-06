@@ -1,7 +1,6 @@
 import React from "react";
 
-function TotalPrice({ basePrice, selectedIngredients }) {
-  const ingredientsPrice = selectedIngredients.length * 5;
+function TotalPrice({ basePrice, ingredientsPrice }) {
   const totalPrice = basePrice + ingredientsPrice;
 
   return (
