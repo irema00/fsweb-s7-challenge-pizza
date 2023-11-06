@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../PizzaForm.css";
 function Size({ onSizeChange, error }) {
   const handleChange = (e) => {
     onSizeChange(e.target.value);

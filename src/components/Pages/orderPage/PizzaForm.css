@@ -1,0 +1,120 @@
+/*Renk Kodları
+Sarı #FDC913, Açık Gri: #5F5F5F, Koyu Gri #292929, Kırmızı #CE2829, Bej: #FAF7F2 */
+
+.form-container{
+display:flex;
+list-style-type:none;
+width: 600px;
+margin:auto;
+}
+#pizza-form {
+display:flex;
+flex-grow:1;
+flex-direction: column;
+padding: 2rem;
+background-color: #fff;
+border-radius: 8px;
+}
+
+.info h4{
+  margin-bottom: 2rem;
+
+}
+.base-price-line {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+.rating-comment{
+  display:flex;
+  gap: 6rem;
+  margin-right:2rem;
+}
+
+.size-dough-container {
+    display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+#dough-select {
+  color:000;
+  border: 2px solid;
+  font-weight: bold;
+  border-radius: 0.2rem;
+  padding:0.3rem;
+ 
+  }
+  
+  .ingredients {
+display:flex;
+flex-direction:column;
+justify-content:center;
+
+
+  }
+  /*Revise red
+  #dough-select :after {
+    content:"*";
+    color: red;}
+
+
+
+
+.ingredients {}
+
+/*ingredients display will be revised  */
+.ingredients ul{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding:0;
+  list-style-type:none;
+  margin-bottom: 1rem;
+
+}
+
+.ingredients ul li{
+  margin-bottom:1rem;
+}
+
+.description{
+ 
+
+margin-right: 1.5rem;
+}
+
+.counter-container {
+  margin-top: 1rem;
+}
+.counter-container span {
+  border: solid 1px; 
+
+}
+#order-button {
+  width: 100%;
+  padding: 10px 20px;
+  background-color:#FDC913;
+  color: 000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+} 
+.counter-container button {
+  background-color:#FDC913; 
+ 
+  border-radius: 0.2rem;
+}
+.counter-totalPrice{
+display:flex;
+flex-direction: row;
+gap: 4rem;
+}
+input#order-note{
+  height: 2rem;
+    border-radius: 5px;
+    margin: 0.3rem;
+}
+
+.item-size{
+  display: grid;
+}
+

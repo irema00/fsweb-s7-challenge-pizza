@@ -9,10 +9,13 @@ import OrderNote from "./orderFormComponents/OrderNote";
 import TotalPrice from "./orderFormComponents/TotalPrice";
 import PizzaInformation from "./orderFormComponents/PizzaInformation";
 import NameInput from "./orderFormComponents/NameInput";
-import css from "./PizzaForm.css";
+import NavBar from "../NavBar";
+import "./PizzaForm.css";
 
 const PizzaForm = () => {
   const basePrice = 85.5;
+  const description =
+    "Embrace the thrill with a slice that's a daredevil's delight! This fiery feast teems with a searing mix of hand-picked jalapeños, intense red chili flakes, and serrano peppers, designed for the spice-thirsty souls. Spicy pepperoni and hearty Italian sausage join the blaze, all smothered under melted mozzarella and provolone on a herb-infused tomato base, cradled by a smoky, hand-tossed crust. It's a bold bite that dares you to dive into its fiery embrace.";
   const [ingredientsPrice, setIngredientsPrice] = useState(0);
   const [errors, setErrors] = useState({});
 
@@ -120,13 +123,14 @@ const PizzaForm = () => {
 
   return (
     <>
+      <NavBar />
       <div className="form-container">
         <Form id="pizza-form">
           <div className="grid-item-info">
             <PizzaInformation
               name="Acili Pizza"
               price={basePrice}
-              description="Lorem Ipsum"
+              description={description}
               rating={4.5}
               commentCount={200}
             />{" "}

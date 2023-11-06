@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../PizzaForm.css";
 function TotalPrice({ basePrice, ingredientsPrice }) {
   const totalPrice = basePrice + ingredientsPrice;
 

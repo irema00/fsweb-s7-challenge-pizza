@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../PizzaForm.css";
 const NameInput = ({ onNameChange, error }) => {
   return (
     <div>

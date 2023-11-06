@@ -1,5 +1,5 @@
 import React from "react";
-import css from "../PizzaForm.css";
+import "../PizzaForm.css";
 const ExtraIngredients = ({
   selectedIngredients,
   onIngredientChange,
@@ -33,12 +33,12 @@ const ExtraIngredients = ({
   };
   //optional disabled : yup err cannot be shown.
 
-  // const isDisabled = (ingredient) => {
-  //   return (
-  //     selectedIngredients.length >= 10 &&
-  //     !selectedIngredients.includes(ingredient)
-  //   );
-  // };
+  const isDisabled = (ingredient) => {
+    return (
+      selectedIngredients.length >= 10 &&
+      !selectedIngredients.includes(ingredient)
+    );
+  };
 
   return (
     <div className="ingredients">
@@ -49,19 +49,23 @@ const ExtraIngredients = ({
         {ingredients.map((ingredient, index) => {
           const ingredientId = `ingredient-${index}`;
           return (
-            <li key={ingredientId}>
-              <input
-                type="checkbox"
-                id={ingredientId}
-                name="ingredients"
-                value={ingredient}
-                checked={selectedIngredients.includes(ingredient)}
-                onChange={(e) => handleIngredientChange(ingredient)}
-                //disabled optional
-                // disabled={isDisabled(ingredient)}
-              />
-              <label htmlFor={ingredientId}>{ingredient}</label>
-            </li>
+            <div classname="checkbox">
+              {" "}
+              <li key={ingredientId}>
+                <input
+                  type="checkbox"
+                  id={ingredientId}
+                  name="ingredients"
+                  value={ingredient}
+                  checked={selectedIngredients.includes(ingredient)}
+                  onChange={(e) => handleIngredientChange(ingredient)}
+                  //disabled optional
+                  disabled={isDisabled(ingredient)}
+                />
+
+                <label htmlFor={ingredientId}>{ingredient}</label>
+              </li>
+            </div>
           );
         })}
       </ul>

@@ -1,0 +1,27 @@
+/*Renk Kodları
+Sarı #FDC913, Açık Gri: #5F5F5F, Koyu Gri #292929, Kırmızı #CE2829, Bej: #FAF7F2 */
+.home-body{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+background-color: #CE2829;
+color:white;
+
+
+
+}
+h2 {
+  font-family: ;
+}
+
+#order-pizza{
+
+}
+
+.home-body button {
+  background-color: #FDC913;
+  border: none;
+
+
+}

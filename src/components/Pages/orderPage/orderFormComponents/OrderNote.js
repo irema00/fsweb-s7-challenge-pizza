@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "../PizzaForm.css";
 function OrderNote({ onNoteChange, error }) {
   const [note, setNote] = useState("");
 

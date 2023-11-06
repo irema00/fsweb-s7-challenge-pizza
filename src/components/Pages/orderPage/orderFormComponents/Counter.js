@@ -1,5 +1,5 @@
 import React from "react";
-import css from "../PizzaForm.css";
+import "../PizzaForm.css";
 
 const Counter = ({ count, onCountChange }) => {
   const handleIncrement = (e) => {
