@@ -22,7 +22,7 @@ function OrderNote({ onNoteChange, error }) {
         onChange={handleNoteChange}
         placeholder="Siparisine eklemek istediğin bir not var mi?"
       ></input>
-      <hr />
+
       {error && <p style={{ color: "red" }}>{error}</p>}
     </>
   );

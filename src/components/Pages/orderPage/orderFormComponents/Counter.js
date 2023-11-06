@@ -15,11 +15,11 @@ const Counter = ({ count, onCountChange }) => {
 
   return (
     <div className="counter-container">
-      <button type="button" onClick={handleDecrement}>
+      <button id="counter-left" type="button" onClick={handleDecrement}>
         -
       </button>
       <span>{count}</span>
-      <button type="button" onClick={handleIncrement}>
+      <button id="counter-right" type="button" onClick={handleIncrement}>
         +
       </button>
     </div>

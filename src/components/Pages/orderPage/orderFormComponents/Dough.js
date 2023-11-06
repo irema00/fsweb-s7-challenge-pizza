@@ -8,7 +8,7 @@ function Dough({ onDoughChange, error }) {
   return (
     <>
       <label htmlFor="dough-select">
-        <h4>Hamur Seç *</h4>
+        <h4>Hamur Seç </h4>
       </label>
       <select id="dough-select" defaultValue="" onChange={handleChange}>
         <option value="" disabled>

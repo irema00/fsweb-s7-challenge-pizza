@@ -136,14 +136,14 @@ const PizzaForm = () => {
             />{" "}
           </div>
           <div className="size-dough-container">
-            <div className="grid-item-size">
+            <div className="size-select">
               <Size
                 id="size-dropdown"
                 onSizeChange={(size) => handleChange("size", size)}
                 error={errors.size}
               />
             </div>
-            <div className="grid-item-dough">
+            <div className="dough-select">
               <Dough
                 id="dough-dropdown"
                 onDoughChange={(dough) => handleChange("dough", dough)}
@@ -151,7 +151,7 @@ const PizzaForm = () => {
               />
             </div>
           </div>
-          <div className="grid-item-ingredients">
+          <div className="ingredients container">
             <ExtraIngredients
               id="ingredients"
               selectedIngredients={order.selectedIngredients}
@@ -161,18 +161,20 @@ const PizzaForm = () => {
               error={errors.selectedIngredients}
             />
           </div>
-          <div className="grid-item-note">
+          <div className="order-note">
             <OrderNote
               id="order-note"
               onNoteChange={(note) => handleChange("specialNote", note)}
               error={errors.specialNote}
             />
           </div>
-          <NameInput
-            id="name-input"
-            onNameChange={(name) => handleChange("name", name)}
-            error={errors.name}
-          />{" "}
+          <div className="name-box">
+            <NameInput
+              id="name-input"
+              onNameChange={(name) => handleChange("name", name)}
+              error={errors.name}
+            />
+          </div>
           <div className="counter-totalPrice">
             <Counter
               count={order.count}
@@ -184,9 +186,9 @@ const PizzaForm = () => {
                 ingredientsPrice={ingredientsPrice}
               />
               <button id="order-button" type="submit" onClick={handleSubmit}>
-                Siparis Ver
+                <strong>SIPARIS VER</strong>
               </button>
-            </div>{" "}
+            </div>
           </div>
         </Form>{" "}
       </div>

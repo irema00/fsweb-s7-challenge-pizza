@@ -4,21 +4,24 @@ Sarı #FDC913, Açık Gri: #5F5F5F, Koyu Gri #292929, Kırmızı #CE2829, Bej: #
 .form-container{
 display:flex;
 list-style-type:none;
-width: 600px;
 margin:auto;
+justify-content: center;
+max-width: 600px;
+
 }
 #pizza-form {
 display:flex;
 flex-grow:1;
 flex-direction: column;
-padding: 2rem;
+padding: 2rem 2rem;
 background-color: #fff;
 border-radius: 8px;
+width: 400px;
 }
 
 .info h4{
   margin-bottom: 2rem;
-
+  
 }
 .base-price-line {
 display: flex;
@@ -43,25 +46,26 @@ justify-content: space-between;
   padding:0.3rem;
  
   }
-  
-  .ingredients {
-display:flex;
-flex-direction:column;
-justify-content:center;
+  .dough-select label :after {
+  content:"*";
+  color: red;}
 
 
+.size-container li {
+  margin-bottom: 1rem;
+
+}
+
+.size-select label :after {
+  content:" *";
+  color: red;}
+.ingredients {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
   }
-  /*Revise red
-  #dough-select :after {
-    content:"*";
-    color: red;}
 
 
-
-
-.ingredients {}
-
-/*ingredients display will be revised  */
 .ingredients ul{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -76,16 +80,17 @@ justify-content:center;
 }
 
 .description{
- 
-
-margin-right: 1.5rem;
+margin-right: 2rem;
 }
 
 .counter-container {
-  margin-top: 1rem;
+ 
+  display: flex;
+  align-items: flex-start;
 }
 .counter-container span {
   border: solid 1px; 
+  display:block;
 
 }
 #order-button {
@@ -101,20 +106,89 @@ margin-right: 1.5rem;
 .counter-container button {
   background-color:#FDC913; 
  
-  border-radius: 0.2rem;
+}
+.counter-container span {
+  padding:8px;
+}
+#counter-left{
+  padding: 10px;
+  border-color:#FDC913;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+}
+#counter-right{
+  padding: 10px;
+  border-color:#FDC913;
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
 }
 .counter-totalPrice{
+  margin-top: 2rem;
 display:flex;
 flex-direction: row;
-gap: 4rem;
-}
-input#order-note{
-  height: 2rem;
-    border-radius: 5px;
-    margin: 0.3rem;
+gap: 1rem;
 }
 
-.item-size{
-  display: grid;
+.order-note{
+  display:flex;
+  flex-direction: column;
+  border-bottom:grey solid 1px;
+}
+
+
+input#order-note{
+  display:flex;
+  height: 2.5rem;
+  border-radius: 5px;
+  border: solid 1px rgb(206, 204, 204);
+  margin-bottom: 2rem;
+  max-width: 600px;;
+}
+
+
+input#name{
+
+  height: 2rem;
+  border-radius: 5px;
+  border: solid 1px rgb(206, 204, 204);
+
+
+}
+
+.order-box{
+
+  border: solid  1px rgb(206, 204, 204);
+  border-radius: 5px;
+  width:20rem;
+
+}
+.order-box h4{
+ 
+  margin-left: 2rem;
+}
+
+.counter-totalPrice{
+  display:flex;
+  flex-direction: row;
+  gap:7rem;
+ 
+}
+
+#extra-total {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 2rem;
+  margin-right: 2rem;
+
+}
+#total {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  color: #CE2829;
+
 }
 
