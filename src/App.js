@@ -9,11 +9,13 @@ const App = () => {
     <>
       <Router>
         <Switch>
-          <Route path="/pizza-success" component={SuccessPage} />
+          <Route path="/pizza-success">
+            <SuccessPage id="success-page" />
+          </Route>
           <Route exact path="/" component={HomePage} />
+
           <Route path="/pizza">
-            {" "}
-            <PizzaForm id="pizza-form" />{" "}
+            <PizzaForm id="pizza-form" />
           </Route>
         </Switch>
       </Router>

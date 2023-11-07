@@ -49,7 +49,7 @@ const ExtraIngredients = ({
         {ingredients.map((ingredient, index) => {
           const ingredientId = `ingredient-${index}`;
           return (
-            <div classname="checkbox">
+            <div key={ingredientId} className="checkbox">
               {" "}
               <li key={ingredientId}>
                 <input

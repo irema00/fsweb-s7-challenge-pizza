@@ -1,6 +1,8 @@
 /*Renk Kodları
 Sarı #FDC913, Açık Gri: #5F5F5F, Koyu Gri #292929, Kırmızı #CE2829, Bej: #FAF7F2 */
 
+
+
 .form-container{
 display:flex;
 list-style-type:none;
@@ -27,6 +29,10 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 }
+
+.base-price-line h2{
+  color:black;
+}
 .rating-comment{
   display:flex;
   gap: 6rem;
@@ -45,19 +51,12 @@ justify-content: space-between;
   padding:0.3rem;
  
   }
-  .dough-select label :after {
-  content:"*";
-  color: red;}
-
 
 .size-container li {
   margin-bottom: 1rem;
 
 }
 
-.size-select label :after {
-  content:" *";
-  color: red;}
 .ingredients {
   display:flex;
   flex-direction:column;
