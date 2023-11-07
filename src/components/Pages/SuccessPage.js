@@ -1,9 +1,13 @@
 import React from "react";
 
+import "./SuccessPage.css";
+
 const Success = () => {
   return (
     <>
-      <h1>Success</h1>
+      <h1>
+        TEBRIKLER <br /> SIPARISINIZ ALINDI
+      </h1>
     </>
   );
 };

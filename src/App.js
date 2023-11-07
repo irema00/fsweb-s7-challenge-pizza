@@ -9,7 +9,7 @@ const App = () => {
     <>
       <Router>
         <Switch>
-          <Route path="/pizza/success" component={SuccessPage} />
+          <Route path="/pizza-success" component={SuccessPage} />
           <Route exact path="/" component={HomePage} />
           <Route path="/pizza">
             {" "}

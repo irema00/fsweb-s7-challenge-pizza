@@ -1,0 +1,54 @@
+/*Renk Kodları
+Sarı #FDC913, Açık Gri: #5F5F5F, Koyu Gri #292929, Kırmızı #CE2829, Bej: #FAF7F2 */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@200&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200&display=swap");
+
+.home-body{
+  margin:0;
+  padding:0;
+  display: flex;
+  background-image: url("../../Assets/mvp-banner.png");
+  align-items: center;
+  flex-direction: column;
+  background-position:center ;
+  background-size:auto;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  justify-content: flex-start;
+  text-align:center;
+  width:100%;
+  height:100%;
+ 
+}h3{
+  font-family: "Londrina Solid",sans-serif;
+  color:white;
+  font-weight: normal;
+  margin-top:60px;
+  font-size: 5vh;
+  
+}h2 {
+color:white;   
+font-family: "Barlow Condensed",sans-serif;
+color:white;
+font-weight:normal;
+font-size: 8vh;
+margin-bottom:1rem;
+margin-top:2rem;
+}
+.home-body button {
+  background-color: #FDC913;
+  border:#FDC913 1px solid;
+  border-radius: 40px;
+  font-size: 2vh; 
+  padding: 0rem 4rem; font-family: "Barlow",sans-serif;
+  font-weight: bold;
+}
+
+

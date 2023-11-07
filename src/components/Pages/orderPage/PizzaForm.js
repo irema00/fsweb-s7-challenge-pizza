@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import * as yup from "yup";
 import Size from "./orderFormComponents/Size";
 import ExtraIngredients from "./orderFormComponents/ExtraIngredients";
@@ -185,9 +186,11 @@ const PizzaForm = () => {
                 basePrice={basePrice * order.count}
                 ingredientsPrice={ingredientsPrice}
               />
-              <button id="order-button" type="submit" onClick={handleSubmit}>
-                <strong>SIPARIS VER</strong>
-              </button>
+              <Link id="order-button" to="/pizza-success">
+                <button id="order-button" type="submit" onClick={handleSubmit}>
+                  <strong>SIPARIS VER</strong>
+                </button>
+              </Link>
             </div>
           </div>
         </Form>{" "}
