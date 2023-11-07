@@ -186,11 +186,10 @@ const PizzaForm = () => {
                 basePrice={basePrice * order.count}
                 ingredientsPrice={ingredientsPrice}
               />
-              <Link id="order-button" to="/pizza-success">
-                <button id="order-button" type="submit" onClick={handleSubmit}>
-                  <strong>SIPARIS VER</strong>
-                </button>
-              </Link>
+
+              <button id="order-button" type="submit" onClick={handleSubmit}>
+                <strong>SIPARIS VER</strong>
+              </button>
             </div>
           </div>
         </Form>{" "}

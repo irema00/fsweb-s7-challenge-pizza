@@ -4,23 +4,23 @@ function Dough({ onDoughChange, error }) {
   const handleChange = (e) => {
     onDoughChange(e.target.value);
   };
-
   return (
     <>
-      <label htmlFor="dough-select">
-        <h4>Hamur Seç </h4>
+      <label htmlFor="crust-type">
+        <h4>
+          Crust Type <span style={{ color: "red" }}>*</span>
+        </h4>
       </label>
-      <select id="dough-select" defaultValue="" onChange={handleChange}>
+      <select id="crust-type" defaultValue="" onChange={handleChange}>
         <option value="" disabled>
-          Hamur Kalinliği
+          Choose Crust Type
         </option>
-        <option value="ince">İnce</option>
-        <option value="orta">Orta</option>
-        <option value="kalın">Kalın</option>
+        <option value="thin">Thin Crust</option>
+        <option value="thick">Thick Crust</option>
+        <option value="gluten-free">Gluten-Free</option>
       </select>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </>
   );
 }
-
 export default Dough;

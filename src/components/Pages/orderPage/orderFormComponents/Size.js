@@ -1,45 +1,44 @@
 import React from "react";
-import "../PizzaForm.css";
+
 function Size({ onSizeChange, error }) {
   const handleChange = (e) => {
     onSizeChange(e.target.value);
   };
-
   return (
     <div className="size-container">
-      <label htmlFor="size-select">
-        <h4>Boyut Seç</h4>
-      </label>
+      <h4>
+        Pizza Size <span style={{ color: "red" }}>*</span>
+      </h4>
       <ul>
         <li>
-          <label htmlFor="size-small">Küçük</label>
           <input
             type="radio"
             id="size-small"
             name="size"
-            value="kucuk"
+            value="small"
             onChange={handleChange}
           />
+          <label htmlFor="size-small"> Small</label>
         </li>
         <li>
-          <label htmlFor="size-medium">Orta</label>
           <input
-            type="radio"
             id="size-medium"
+            type="radio"
             name="size"
-            value="orta"
+            value="medium"
             onChange={handleChange}
           />
+          <label htmlFor="size-medium"> Medium </label>
         </li>
         <li>
-          <label htmlFor="size-large">Büyük</label>
           <input
-            type="radio"
             id="size-large"
+            type="radio"
             name="size"
             value="buyuk"
             onChange={handleChange}
           />
+          <label htmlFor="size-large"> Large</label>
         </li>
       </ul>
       {error && <p style={{ color: "red" }}>{error}</p>}

@@ -24,6 +24,7 @@ width: 400px;
   margin-bottom: 2rem;
   
 }
+
 .base-price-line {
 display: flex;
 flex-direction: row;
@@ -38,23 +39,26 @@ justify-content: space-between;
   gap: 6rem;
   margin-right:2rem;
 }
-
+.description{
+  margin-right: 2rem;
+}
 .size-dough-container {
-    display: grid;
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-#dough-select {
+.size-container ul {
+  padding:0;
+  list-style: none;
+}
+.size-container li {
+  margin-bottom: 1rem;
+}
+#crust-type {
   color:000;
   border: 2px solid;
   font-weight: bold;
   border-radius: 0.2rem;
   padding:0.3rem;
- 
-  }
-
-.size-container li {
-  margin-bottom: 1rem;
-
 }
 
 .ingredients {
@@ -62,7 +66,6 @@ justify-content: space-between;
   flex-direction:column;
   justify-content:center;
   }
-
 
 .ingredients ul{
   display: grid;
@@ -72,24 +75,17 @@ justify-content: space-between;
   margin-bottom: 1rem;
 
 }
-
 .ingredients ul li{
   margin-bottom:1rem;
 }
 
-.description{
-margin-right: 2rem;
-}
-
 .counter-container {
- 
   display: flex;
   align-items: flex-start;
 }
 .counter-container span {
   border: solid 1px; 
   display:block;
-
 }
 #order-button {
   display:flex;
@@ -104,10 +100,10 @@ margin-right: 2rem;
   text-decoration: none;
 } 
 .counter-container button {
-  background-color:#FDC913; 
- 
+  background-color:#FDC913;  
 }
 .counter-container span {
+  border-color:  rgb(206, 204, 204);
   padding:8px;
 }
 #counter-left{
@@ -124,17 +120,15 @@ margin-right: 2rem;
 }
 .counter-totalPrice{
   margin-top: 2rem;
-display:flex;
-flex-direction: row;
-gap: 1rem;
+  display:flex;
+  flex-direction: row;
+  gap: 1rem;
 }
-
 .order-note{
   display:flex;
   flex-direction: column;
   border-bottom:grey solid 1px;
 }
-
 
 input#order-note{
   display:flex;
@@ -144,34 +138,23 @@ input#order-note{
   margin-bottom: 2rem;
   max-width: 600px;;
 }
-
-
 input#name{
-
   height: 2rem;
   border-radius: 5px;
   border: solid 1px rgb(206, 204, 204);
-
-
 }
-
 .order-box{
-
   border: solid  1px rgb(206, 204, 204);
   border-radius: 5px;
   width:20rem;
-
 }
 .order-box h4{
- 
   margin-left: 2rem;
 }
-
 .counter-totalPrice{
   display:flex;
   flex-direction: row;
   gap:7rem;
- 
 }
 
 #extra-total {
@@ -180,7 +163,6 @@ input#name{
   justify-content: space-between;
   margin-left: 2rem;
   margin-right: 2rem;
-
 }
 #total {
   display:flex;
@@ -189,6 +171,5 @@ input#name{
   margin-left: 2rem;
   margin-right: 2rem;
   color: #CE2829;
-
 }
 
