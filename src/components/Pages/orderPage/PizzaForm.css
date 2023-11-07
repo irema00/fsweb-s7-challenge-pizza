@@ -1,5 +1,14 @@
 /*Renk Kodları
 Sarı #FDC913, Açık Gri: #5F5F5F, Koyu Gri #292929, Kırmızı #CE2829, Bej: #FAF7F2 */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@200&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200&display=swap");
 
 
 
@@ -8,8 +17,9 @@ display:flex;
 list-style-type:none;
 margin:auto;
 justify-content: center;
-max-width: 600px;
-
+max-width: 700px;
+font-family: "Londrina Solid";
+font-weight: 300;
 }
 #pizza-form {
 display:flex;
@@ -17,27 +27,46 @@ flex-grow:1;
 flex-direction: column;
 padding: 2rem 2rem;
 background-color: #fff;
-width: 400px;
+width: 600px;
 }
+ h4{
+  font-family: "Barlow";
+  font-weight:600;
+  font-size:20px;
+  line-height:24.76px;
+  margin-bottom:0;
+  color: #000;
 
+}
 .info h4{
-  margin-bottom: 2rem;
-  
-}
 
+}
+.description{
+  font-family: "Barlow";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28.8px;
+  color: #5F5F5F;
+
+}
 .base-price-line {
 display: flex;
 flex-direction: row;
+align-items: center;
 justify-content: space-between;
 }
 
 .base-price-line h2{
   color:black;
+  font-family: "Barlow";
+  font-weight: bold;
 }
 .rating-comment{
   display:flex;
   gap: 6rem;
   margin-right:2rem;
+  color: #6b6b6b;
+  font-family: "Barlow";
 }
 .description{
   margin-right: 2rem;
@@ -49,6 +78,9 @@ justify-content: space-between;
 .size-container ul {
   padding:0;
   list-style: none;
+  font-family:"Barlow", serif;
+  font-weight: 500;
+  color: #6b6b6b;
 }
 .size-container li {
   margin-bottom: 1rem;
@@ -60,12 +92,18 @@ justify-content: space-between;
   border-radius: 0.2rem;
   padding:0.3rem;
 }
+select#crust-type{
+  margin-top:1rem;
+}
 
 .ingredients {
   display:flex;
   flex-direction:column;
   justify-content:center;
-  }
+  font-family:"Barlow", serif;
+  font-weight: 500;
+  color: #636363;
+}
 
 .ingredients ul{
   display: grid;
@@ -73,6 +111,9 @@ justify-content: space-between;
   padding:0;
   list-style-type:none;
   margin-bottom: 1rem;
+  color: #585858;
+  font-family:"Barlow", serif;
+  font-weight: 700;
 
 }
 .ingredients ul li{
@@ -85,12 +126,14 @@ justify-content: space-between;
 }
 .counter-container span {
   border: solid 1px; 
-  display:block;
+  display:block; 
+  border-color:  rgb(206, 204, 204);
+  padding:18px;
 }
 #order-button {
   display:flex;
   justify-content: center;
-  padding: 10px 20px;
+  padding: 1.25rem;
   background-color:#FDC913;
   color: 000;
   border: none;
@@ -98,22 +141,20 @@ justify-content: space-between;
   cursor: pointer;
   font-size: 16px;
   text-decoration: none;
+  width: inherit;
 } 
 .counter-container button {
   background-color:#FDC913;  
 }
-.counter-container span {
-  border-color:  rgb(206, 204, 204);
-  padding:8px;
-}
+
 #counter-left{
-  padding: 10px;
+  padding: 18px;
   border-color:#FDC913;
   border-top-left-radius: 0.3rem;
   border-bottom-left-radius: 0.3rem;
 }
 #counter-right{
-  padding: 10px;
+  padding: 18px;
   border-color:#FDC913;
   border-top-right-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
@@ -129,32 +170,40 @@ justify-content: space-between;
   flex-direction: column;
   border-bottom:grey solid 1px;
 }
-
 input#order-note{
   display:flex;
   height: 2.5rem;
   border-radius: 5px;
   border: solid 1px rgb(206, 204, 204);
   margin-bottom: 2rem;
-  max-width: 600px;;
+  max-width: 700px;;
+  padding-left:10px;  
+  margin-top:1rem;
 }
 input#name{
+  margin-top:1rem;
   height: 2rem;
   border-radius: 5px;
   border: solid 1px rgb(206, 204, 204);
+ 
 }
 .order-box{
   border: solid  1px rgb(206, 204, 204);
   border-radius: 5px;
-  width:20rem;
+  width:23rem;
+  font-family:"Barlow", serif;
+  font-weight: 500;
+  
 }
 .order-box h4{
   margin-left: 2rem;
+  margin-top:2.5rem;
 }
 .counter-totalPrice{
   display:flex;
   flex-direction: row;
   gap:7rem;
+  justify-content: space-between;
 }
 
 #extra-total {
@@ -163,6 +212,7 @@ input#name{
   justify-content: space-between;
   margin-left: 2rem;
   margin-right: 2rem;
+  color:grey;
 }
 #total {
   display:flex;
@@ -173,3 +223,85 @@ input#name{
   color: #CE2829;
 }
 
+@media only screen and (max-width: 500px) {
+  .form-container{
+   width:100%;
+   height:100%;
+  }
+  #pizza-form {
+  display:flex;
+  flex-grow:1;
+  flex-direction: column;
+  background-color: #fff;
+  }
+   h4{
+    text-align:center; 
+   }
+  .description{
+    text-align:center;
+    margin:0;
+    padding:0;
+  }
+  .base-price-line {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .base-price-line h2{
+    font-size:23px;
+  }
+  .rating-comment{
+    gap: 1rem;
+  }
+  .size-dough-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .size-container ul {
+    align-items:center;
+    font-size:18px;
+    margin-top:2rem;
+  } 
+  #crust-type {
+    color:000;
+    border: 2px solid;
+    font-weight: bold;
+    border-radius: 0.2rem;
+    padding:0.3rem;
+ 
+  }
+  select#crust-type{
+   margin:10% 25%;
+  }
+    .ingredients {
+    display:flex;
+    flex-direction:column;
+    margin-bottom:1rem;
+  }
+
+  .ingredients ul{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items:center; 
+    margin-top:1rem;
+  }
+  .counter-container {
+    justify-content: center;
+  }
+  #order-button {
+    width:100%;
+  } 
+
+  input#name{
+    width:100%;
+  }
+  .order-box{
+    width:auto;
+  }
+  .counter-totalPrice{
+    gap:2rem;
+    flex-direction: column;
+  }
+ 
+
+}
