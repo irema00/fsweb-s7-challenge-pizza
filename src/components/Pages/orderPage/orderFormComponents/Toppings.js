@@ -30,8 +30,6 @@ const Toppings = ({ selectedToppings, onToppingChange, error }) => {
   });
 
   const toppingSelect = (e, topping) => {
-    // setToppings({ ...toppings, [topping]: e.target.checked });
-
     if (e.target.checked) {
       Object.values(toppings);
     }
@@ -55,6 +53,7 @@ const Toppings = ({ selectedToppings, onToppingChange, error }) => {
               <li key={toppingId}>
                 <input
                   id={toppingId}
+                  value={topping}
                   type="checkbox"
                   name="toppings"
                   onChange={(e) => toppingSelect(e, topping)}

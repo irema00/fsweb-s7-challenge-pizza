@@ -77,10 +77,10 @@ const PizzaForm = () => {
     setOrder(updatedOrder);
     validateInput(name, value);
 
-    if (name === "selectedToppings") {
-      const extraToppingsCount = value.length;
-      const price = extraToppingsCount * 5;
-      setToppingsPrice(price);
+    if (name === "toppings") {
+      const toppingsCount = value.length;
+      const updatedPrice = toppingsCount * 5;
+      setToppingsPrice(updatedPrice);
     }
 
     setErrors((prevErrors) => ({
@@ -174,7 +174,7 @@ const PizzaForm = () => {
           </div>
           <div className="order-note">
             <NameInput
-              id="name-input"
+              id="name"
               onNameChange={(name) => handleChange("name", name)}
               error={errors.name}
             />

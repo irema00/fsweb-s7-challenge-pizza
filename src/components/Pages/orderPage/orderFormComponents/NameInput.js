@@ -8,8 +8,8 @@ const NameInput = ({ onNameChange, error }) => {
       </label>
       <input
         type="text"
-        id="name"
-        autoComplete="name"
+        id="name-input"
+        autoComplete="name-input"
         onChange={(e) => onNameChange(e.target.value)}
       />
       {error && <p style={{ color: "red" }}>{error}</p>}
