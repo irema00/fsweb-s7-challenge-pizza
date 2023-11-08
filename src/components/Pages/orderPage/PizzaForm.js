@@ -44,7 +44,7 @@ const PizzaForm = () => {
       .min(4, "You must select at least 4 toppings.")
       .max(10, "You cannot select more than 10 toppings."),
     size: yup.string().required("Please select a size."),
-    dough: yup.string().required("LPlease select a crust type."),
+    dough: yup.string().required("Please select a crust type."),
     specialNote: yup.string(),
     name: yup
       .string()
