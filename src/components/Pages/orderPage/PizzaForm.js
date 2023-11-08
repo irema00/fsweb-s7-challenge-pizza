@@ -77,7 +77,7 @@ const PizzaForm = () => {
     setOrder(updatedOrder);
     validateInput(name, value);
 
-    if (name === "toppings") {
+    if (name === "selectedToppings") {
       const toppingsCount = value.length;
       const updatedPrice = toppingsCount * 5;
       setToppingsPrice(updatedPrice);
