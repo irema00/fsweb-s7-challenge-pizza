@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Form } from "react-bootstrap";
 import axios from "axios";
 import * as yup from "yup";
@@ -14,6 +15,7 @@ import "./PizzaForm.css";
 import Header from "./orderFormComponents/Header";
 
 const PizzaForm = () => {
+  const history = useHistory();
   const basePrice = (85.5).toFixed(2);
   const description =
     "This zesty codebase is topped with spicy JavaScript functions, CSS selectors with a kick, and React props that sizzle. Watch out for the hot API peppers, and debug your way through the melted cheese of syntax errors. It’s all served on a crispy framework crust, with a side of version control. A bite not for the faint of heart, daring you to commit to the spicy side of coding!";
@@ -104,15 +106,15 @@ const PizzaForm = () => {
         SelectionTotal: toppingsPrice.toFixed(2),
         OrderTotal: ((basePrice + toppingsPrice) * order.count).toFixed(2),
       };
-      console.log("Sipariş Özeti:", orderSummary);
+      console.log("Order Summary:", orderSummary);
 
       const endpoint = "https://reqres.in/api/users";
       await axios
         .post(endpoint, order)
-        .then((r) => {
-          console.log("API response", r.data);
-          setOrderSummarySuccess(r.data);
-          console.log(orderSummarySuccess);
+        .then((res) => {
+          console.log("API response", res.data);
+          setOrderSummarySuccess(res.data);
+          history.push("/pizza-success");
         })
         .catch((err) => {
           console.log("POST error", err);
