@@ -34,20 +34,20 @@ const PizzaForm = () => {
   const validationSchema = yup.object().shape({
     count: yup
       .number()
-      .required("Adet gerekli.")
-      .min(1, "En az 1 pizza siparişi verilmeli."),
+      .required("Count is required.")
+      .min(1, "You must order at least 1 pizza."),
     selectedToppings: yup
       .array()
       .of(yup.string())
-      .min(4, "En az 4 malzeme seçmelisiniz.")
-      .max(10, "En fazla 10 malzeme seçebilirsiniz."),
-    size: yup.string().required("Lütfen boyut seçiniz."),
-    dough: yup.string().required("Lütfen hamur seçiniz."),
+      .min(4, "You must select at least 4 toppings.")
+      .max(10, "You cannot select more than 10 toppings."),
+    size: yup.string().required("Please select a size."),
+    dough: yup.string().required("LPlease select a crust type."),
     specialNote: yup.string(),
     name: yup
       .string()
-      .required("İsim gereklidir.")
-      .min(2, "İsim en az 2 karakter olmalıdır."),
+      .required("Name is required")
+      .min(2, "Name must be at least 2 characters long"),
   });
 
   const validateInput = (name, value) => {
