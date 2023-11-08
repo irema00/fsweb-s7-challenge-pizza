@@ -33,8 +33,6 @@ const PizzaForm = () => {
   const [orderSummarySuccess, setOrderSummarySuccess] = useState("");
   const validationSchema = yup.object().shape({
     count: yup
-
-      //unnecessary?
       .number()
       .required("Adet gerekli.")
       .min(1, "En az 1 pizza siparişi verilmeli."),

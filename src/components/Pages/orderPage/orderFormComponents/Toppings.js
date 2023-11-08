@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../PizzaForm.css";
 
 const toppingList = [
@@ -39,11 +39,6 @@ const Toppings = ({ selectedToppings, onToppingChange, error }) => {
       Object.keys(newToppings).filter((topping) => newToppings[topping])
     );
   };
-
-  useEffect(() => {
-    console.log("toppings güncellendi: ", toppings);
-  }, [toppings]);
-
   return (
     <div className="toppings">
       <h4>Toppings</h4>
