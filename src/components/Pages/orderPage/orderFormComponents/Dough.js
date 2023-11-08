@@ -15,9 +15,9 @@ function Dough({ onDoughChange, error }) {
         <option value="" disabled>
           Choose Crust Type
         </option>
-        <option value="thin">Flex-Container Crunch</option>
-        <option value="thick">Grid Layout Gourmet</option>
-        <option value="gluten-free">Bootstrap Biscuit Base</option>
+        <option value="Flex-Container-Crunch">Flex-Container Crunch</option>
+        <option value="Grid-Layout-Gourmet">Grid Layout Gourmet</option>
+        <option value="Bootstrap-Biscuit-Base">Bootstrap Biscuit Base</option>
       </select>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </>
