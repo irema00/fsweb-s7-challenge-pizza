@@ -1,33 +1,36 @@
-/*Renk Kodları
-Sarı #FDC913, Açık Gri: #5F5F5F, Koyu Gri #292929, Kırmızı #CE2829, Bej: #FAF7F2 */
-/* @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@200&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200&display=swap");
 
 .success{
   background-color: #CE2829;
   display: flex;
   flex-direction: column;
-  background-size: auto;
   min-height: 100vh;
   text-align: center;
   color: white;
-  gap: 10rem;
-
+  gap: 8rem;
+  font-family: "Barlow Condensed",sans-serif;
+  color: white;
+  font-weight: 100;
 }
-.header{
-  justify-content:center;
 
+
+.header h3{
+  font-family: "Londrina Solid",sans-serif;
+  color:white;
+  font-weight: normal;
+  margin-top:50px;
+  font-size: 4vh;
 }
 .success-msg{
-  display: flex;
-  justify-content:center;
+  color: white;
+  font-family: "Barlow Condensed",sans-serif;
+  color: white;
+  font-weight: 100;
+  font-size: 5vh;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
 }
 
 
