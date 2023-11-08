@@ -18,22 +18,26 @@ const toppingList = [
   "Mozzarella",
 ];
 const Toppings = ({ selectedToppings, onToppingChange, error }) => {
+  const validSelectedToppings = Array.isArray(selectedToppings)
+    ? selectedToppings
+    : [];
+
   const [toppings, setToppings] = useState(() => {
     const toppingInitial = {};
 
     toppingList.forEach((topping) => {
-      toppingInitial[topping] = false;
+      toppingInitial[topping] = validSelectedToppings.includes(topping);
     });
 
-    console.log("toppingInitial > ", toppingInitial);
     return toppingInitial;
   });
 
   const toppingSelect = (e, topping) => {
-    if (e.target.checked) {
-      Object.values(toppings);
-    }
-    setToppings({ ...toppings, [topping]: e.target.checked });
+    const newToppings = { ...toppings, [topping]: e.target.checked };
+    setToppings(newToppings);
+    onToppingChange(
+      Object.keys(newToppings).filter((topping) => newToppings[topping])
+    );
   };
 
   useEffect(() => {
