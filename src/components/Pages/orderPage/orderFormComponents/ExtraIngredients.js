@@ -7,18 +7,18 @@ const ExtraIngredients = ({
 }) => {
   const ingredients = [
     "Pepperoni",
-    "Domates",
-    "Sosis",
-    "Misir",
-    "Kanada Jambonu",
-    "Tavuk Izgara",
-    "Sogan",
-    "Biber",
-    "Sucuk",
-    "Ananas",
+    "Tomato",
+    "Sausage",
+    "Corn",
+    "Canadian Bacon",
+    "Grilled Chicken",
+    "Onion",
+    "Pepper",
+    "Sujuk",
+    "Pineapple",
     "Jalapeno",
-    "Kabak",
-    "Sarimsak",
+    "Zucchini",
+    "Garlic",
     "Mozzarella",
   ];
 
@@ -42,8 +42,8 @@ const ExtraIngredients = ({
 
   return (
     <div className="ingredients">
-      <h4>Malzemeler</h4>
-      <p>En fazla 10 malzeme seçebilirsiniz. </p>
+      <h4>Toppings</h4>
+      <p>You can select up to 10 toppings. 5₺ </p>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <ul>
         {ingredients.map((ingredient, index) => {

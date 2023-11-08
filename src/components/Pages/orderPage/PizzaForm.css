@@ -3,14 +3,20 @@ Sarı #FDC913, Açık Gri: #5F5F5F, Koyu Gri #292929, Kırmızı #CE2829, Bej: #
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@200&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200&display=swap");
 
-
+header{
+  height: 8rem;
+  background-color: #ce2829;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  color: #fff;
+}
 
 .form-container{
 display:flex;
@@ -21,6 +27,7 @@ max-width: 700px;
 font-family: "Londrina Solid";
 font-weight: 300;
 }
+
 #pizza-form {
 display:flex;
 flex-grow:1;
@@ -28,39 +35,39 @@ flex-direction: column;
 padding: 2rem 2rem;
 background-color: #fff;
 width: 600px;
+font-family: "Londrina Solid";
 }
- h4{
+
+h4{
   font-family: "Barlow";
   font-weight:600;
   font-size:20px;
   line-height:24.76px;
   margin-bottom:0;
   color: #000;
-
 }
-.info h4{
 
-}
 .description{
   font-family: "Barlow";
   font-weight: 400;
   font-size: 16px;
   line-height: 28.8px;
   color: #5F5F5F;
-
 }
+
 .base-price-line {
 display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: space-between;
 }
-
 .base-price-line h2{
   color:black;
   font-family: "Barlow";
   font-weight: bold;
+  font-size:auto;
 }
+
 .rating-comment{
   display:flex;
   gap: 6rem;
@@ -68,29 +75,37 @@ justify-content: space-between;
   color: #6b6b6b;
   font-family: "Barlow";
 }
+
 .description{
   margin-right: 2rem;
 }
+
 .size-dough-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
 }
+
 .size-container ul {
   padding:0;
   list-style: none;
   font-family:"Barlow", serif;
   font-weight: 500;
   color: #6b6b6b;
+  cursor: pointer;
 }
+
 .size-container li {
   margin-bottom: 1rem;
 }
+
 #crust-type {
   color:000;
   border: 2px solid;
   font-weight: bold;
   border-radius: 0.2rem;
   padding:0.3rem;
+  cursor: pointer;
 }
 select#crust-type{
   margin-top:1rem;
@@ -103,6 +118,7 @@ select#crust-type{
   font-family:"Barlow", serif;
   font-weight: 500;
   color: #636363;
+  cursor: pointer;
 }
 
 .ingredients ul{
@@ -114,10 +130,11 @@ select#crust-type{
   color: #585858;
   font-family:"Barlow", serif;
   font-weight: 700;
-
+  cursor: pointer;
 }
 .ingredients ul li{
   margin-bottom:1rem;
+  cursor: pointer;
 }
 
 .counter-container {
@@ -129,6 +146,7 @@ select#crust-type{
   display:block; 
   border-color:  rgb(206, 204, 204);
   padding:18px;
+  height: inherit;
 }
 #order-button {
   display:flex;
@@ -142,9 +160,11 @@ select#crust-type{
   font-size: 16px;
   text-decoration: none;
   width: inherit;
+  cursor: pointer;
+
 } 
 .counter-container button {
-  background-color:#FDC913;  
+  background-color:#FDC913;    
 }
 
 #counter-left{
@@ -152,12 +172,16 @@ select#crust-type{
   border-color:#FDC913;
   border-top-left-radius: 0.3rem;
   border-bottom-left-radius: 0.3rem;
+  cursor: pointer;
 }
+
 #counter-right{
   padding: 18px;
   border-color:#FDC913;
   border-top-right-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
+  cursor: pointer;
+
 }
 .counter-totalPrice{
   margin-top: 2rem;

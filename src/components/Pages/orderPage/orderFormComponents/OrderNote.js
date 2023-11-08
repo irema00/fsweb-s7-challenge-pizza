@@ -13,14 +13,14 @@ function OrderNote({ onNoteChange, error }) {
     <>
       <label htmlFor="order-note">
         {" "}
-        <h4>Siparis Notu</h4>
+        <h4>Special Instruction</h4>
       </label>
       <input
         type="text"
         id="order-note"
         value={note}
         onChange={handleNoteChange}
-        placeholder="Siparisine eklemek istediğin bir not var mi?"
+        placeholder="Do you have any additional notes for your order?"
       ></input>
 
       {error && <p style={{ color: "red" }}>{error}</p>}

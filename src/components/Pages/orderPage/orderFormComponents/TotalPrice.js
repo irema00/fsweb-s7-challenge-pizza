@@ -5,14 +5,14 @@ function TotalPrice({ basePrice, ingredientsPrice }) {
 
   return (
     <>
-      <h4>Sipariş Toplami</h4>
+      <h4>Order Total</h4>
       <div id="extra-total">
-        <p>Seçimler:</p> <p>{ingredientsPrice}₺ </p>
+        <p>Selections:</p> <p>{ingredientsPrice}₺ </p>
       </div>
 
       <div id="total">
         <p>
-          <strong>Toplam:</strong>
+          <strong>Total:</strong>
         </p>
         <p>{totalPrice}₺ </p>
       </div>

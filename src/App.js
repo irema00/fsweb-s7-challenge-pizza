@@ -13,7 +13,6 @@ const App = () => {
             <SuccessPage id="success-page" />
           </Route>
           <Route exact path="/" component={HomePage} />
-
           <Route path="/pizza">
             <PizzaForm id="pizza-form" />
           </Route>

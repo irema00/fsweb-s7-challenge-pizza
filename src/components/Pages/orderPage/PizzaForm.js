@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import axios from "axios";
 import * as yup from "yup";
 import Size from "./orderFormComponents/Size";
 import ExtraIngredients from "./orderFormComponents/ExtraIngredients";
@@ -10,13 +10,13 @@ import OrderNote from "./orderFormComponents/OrderNote";
 import TotalPrice from "./orderFormComponents/TotalPrice";
 import PizzaInformation from "./orderFormComponents/PizzaInformation";
 import NameInput from "./orderFormComponents/NameInput";
-import NavBar from "../NavBar";
 import "./PizzaForm.css";
+import Header from "./orderFormComponents/Header";
 
 const PizzaForm = () => {
-  const basePrice = 85.5;
+  const basePrice = (85.5).toFixed(2);
   const description =
-    "Embrace the thrill with a slice that's a daredevil's delight! This fiery feast teems with a searing mix of hand-picked jalapeños, intense red chili flakes, and serrano peppers, designed for the spice-thirsty souls. Spicy pepperoni and hearty Italian sausage join the blaze, all smothered under melted mozzarella and provolone on a herb-infused tomato base, cradled by a smoky, hand-tossed crust. It's a bold bite that dares you to dive into its fiery embrace.";
+    "This zesty codebase is topped with spicy JavaScript functions, CSS selectors with a kick, and React props that sizzle. Watch out for the hot API peppers, and debug your way through the melted cheese of syntax errors. It’s all served on a crispy framework crust, with a side of version control. A bite not for the faint of heart, daring you to commit to the spicy side of coding!";
   const [ingredientsPrice, setIngredientsPrice] = useState(0);
   const [errors, setErrors] = useState({});
 
@@ -30,7 +30,6 @@ const PizzaForm = () => {
   };
 
   const [order, setOrder] = useState(initialOrder);
-
   const validationSchema = yup.object().shape({
     count: yup
 
@@ -68,7 +67,6 @@ const PizzaForm = () => {
         setErrors(newErrors);
       });
   };
-  // change on Counter will be revised later
 
   const handleChange = (name, value) => {
     const updatedOrder = {
@@ -107,8 +105,12 @@ const PizzaForm = () => {
         secimlerFiyati: ingredientsPrice,
         toplamFiyat: (basePrice + ingredientsPrice) * order.count,
       };
+      const response = await axios.post(
+        "https://reqres.in/api/users ",
+        orderSummary
+      );
       console.log("Sipariş Özeti:", orderSummary);
-      // POST request
+      console.log("API response", response.data);
     } catch (err) {
       if (err.inner) {
         const formErrors = err.inner.reduce((acc, curr) => {
@@ -124,17 +126,17 @@ const PizzaForm = () => {
 
   return (
     <>
-      <NavBar />
+      <Header />
       <div className="form-container">
         <Form id="pizza-form">
-          <div className="grid-item-info">
+          <div className="pizza-info-container">
             <PizzaInformation
-              name="Acili Pizza"
+              name="Dev's Daredevil Slice"
               price={basePrice}
               description={description}
-              rating={4.5}
+              rating={4.9}
               commentCount={200}
-            />{" "}
+            />
           </div>
           <div className="size-dough-container">
             <div className="size-select">
@@ -163,36 +165,34 @@ const PizzaForm = () => {
             />
           </div>
           <div className="order-note">
+            <NameInput
+              id="name-input"
+              onNameChange={(name) => handleChange("name", name)}
+              error={errors.name}
+            />
             <OrderNote
               id="order-note"
               onNoteChange={(note) => handleChange("specialNote", note)}
               error={errors.specialNote}
             />
           </div>
-          <div className="name-box">
-            <NameInput
-              id="name-input"
-              onNameChange={(name) => handleChange("name", name)}
-              error={errors.name}
-            />
-          </div>
+          <div className="name-box"></div>
           <div className="counter-totalPrice">
             <Counter
               count={order.count}
               onCountChange={(newCount) => handleChange("count", newCount)}
-            />{" "}
+            />
             <div className="order-box">
               <TotalPrice
                 basePrice={basePrice * order.count}
                 ingredientsPrice={ingredientsPrice}
               />
-
               <button id="order-button" type="submit" onClick={handleSubmit}>
-                <strong>SIPARIS VER</strong>
+                <strong>ORDER NOW</strong>
               </button>
             </div>
           </div>
-        </Form>{" "}
+        </Form>
       </div>
     </>
   );
