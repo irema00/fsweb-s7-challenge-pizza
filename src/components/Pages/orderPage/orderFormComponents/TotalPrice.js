@@ -1,7 +1,7 @@
 import React from "react";
 import "../PizzaForm.css";
 function TotalPrice({ basePrice, toppingsPrice }) {
-  const totalPrice = basePrice + toppingsPrice;
+  const totalPrice = (basePrice + toppingsPrice).toFixed(2);
 
   return (
     <>
