@@ -3,12 +3,12 @@ import "../PizzaForm.css";
 const NameInput = ({ onNameChange, error }) => {
   return (
     <div>
-      <label htmlFor="name-input">
+      <label htmlFor="name">
         <h4>Name</h4>
       </label>
       <input
         type="text"
-        id="name-input"
+        id="name"
         autoComplete="name"
         onChange={(e) => onNameChange(e.target.value)}
       />

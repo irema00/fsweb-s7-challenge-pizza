@@ -111,7 +111,7 @@ select#crust-type{
   margin-top:1rem;
 }
 
-.ingredients {
+.toppings {
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -121,7 +121,7 @@ select#crust-type{
   cursor: pointer;
 }
 
-.ingredients ul{
+.toppings ul{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding:0;
@@ -132,7 +132,7 @@ select#crust-type{
   font-weight: 700;
   cursor: pointer;
 }
-.ingredients ul li{
+.toppings ul li{
   margin-bottom:1rem;
   cursor: pointer;
 }
@@ -297,13 +297,13 @@ input#name{
   select#crust-type{
    margin:10% 25%;
   }
-    .ingredients {
+    .toppings {
     display:flex;
     flex-direction:column;
     margin-bottom:1rem;
   }
 
-  .ingredients ul{
+  .toppings ul{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items:center; 

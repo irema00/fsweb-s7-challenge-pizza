@@ -3,7 +3,7 @@ import { Form } from "react-bootstrap";
 import axios from "axios";
 import * as yup from "yup";
 import Size from "./orderFormComponents/Size";
-import ExtraIngredients from "./orderFormComponents/ExtraIngredients";
+import Toppings from "./orderFormComponents/Toppings";
 import Dough from "./orderFormComponents/Dough";
 import Counter from "./orderFormComponents/Counter";
 import OrderNote from "./orderFormComponents/OrderNote";
@@ -17,12 +17,12 @@ const PizzaForm = () => {
   const basePrice = (85.5).toFixed(2);
   const description =
     "This zesty codebase is topped with spicy JavaScript functions, CSS selectors with a kick, and React props that sizzle. Watch out for the hot API peppers, and debug your way through the melted cheese of syntax errors. It’s all served on a crispy framework crust, with a side of version control. A bite not for the faint of heart, daring you to commit to the spicy side of coding!";
-  const [ingredientsPrice, setIngredientsPrice] = useState(0);
+  const [toppingsPrice, setToppingsPrice] = useState(0);
   const [errors, setErrors] = useState({});
 
   const initialOrder = {
     count: 1,
-    selectedIngredients: [],
+    selectedToppings: [],
     size: "",
     dough: "",
     specialNote: "",
@@ -30,6 +30,7 @@ const PizzaForm = () => {
   };
 
   const [order, setOrder] = useState(initialOrder);
+  const [orderSummarySuccess, setOrderSummarySuccess] = useState("");
   const validationSchema = yup.object().shape({
     count: yup
 
@@ -37,7 +38,7 @@ const PizzaForm = () => {
       .number()
       .required("Adet gerekli.")
       .min(1, "En az 1 pizza siparişi verilmeli."),
-    selectedIngredients: yup
+    selectedToppings: yup
       .array()
       .of(yup.string())
       .min(4, "En az 4 malzeme seçmelisiniz.")
@@ -76,10 +77,10 @@ const PizzaForm = () => {
     setOrder(updatedOrder);
     validateInput(name, value);
 
-    if (name === "selectedIngredients") {
-      const extraIngredientsCount = value.length;
-      const price = extraIngredientsCount * 5;
-      setIngredientsPrice(price);
+    if (name === "selectedToppings") {
+      const extraToppingsCount = value.length;
+      const price = extraToppingsCount * 5;
+      setToppingsPrice(price);
     }
 
     setErrors((prevErrors) => ({
@@ -95,22 +96,29 @@ const PizzaForm = () => {
       setErrors({});
 
       const orderSummary = {
-        pizzaSecimi: "Acili Pizza",
-        boyut: order.size,
-        malzemeler: order.selectedIngredients,
-        hamur: order.dough,
-        siparisNotu: order.specialNote,
-        adet: order.count,
-        name: order.name,
-        secimlerFiyati: ingredientsPrice,
-        toplamFiyat: (basePrice + ingredientsPrice) * order.count,
+        PizzaSelection: "Dev's Daredevil Slice",
+        Size: order.size,
+        Toppings: order.selectedToppings,
+        CrustType: order.dough,
+        SpecialNote: order.specialNote,
+        Count: order.count,
+        Name: order.name,
+        SelectionTotal: toppingsPrice.toFixed(2),
+        OrderTotal: ((basePrice + toppingsPrice) * order.count).toFixed(2),
       };
-      const response = await axios.post(
-        "https://reqres.in/api/users ",
-        orderSummary
-      );
       console.log("Sipariş Özeti:", orderSummary);
-      console.log("API response", response.data);
+
+      const endpoint = "https://reqres.in/api/users";
+      await axios
+        .post(endpoint, order)
+        .then((r) => {
+          console.log("API response", r.data);
+          setOrderSummarySuccess(r.data);
+          console.log(orderSummarySuccess);
+        })
+        .catch((err) => {
+          console.log("POST error", err);
+        });
     } catch (err) {
       if (err.inner) {
         const formErrors = err.inner.reduce((acc, curr) => {
@@ -154,14 +162,14 @@ const PizzaForm = () => {
               />
             </div>
           </div>
-          <div className="ingredients container">
-            <ExtraIngredients
-              id="ingredients"
-              selectedIngredients={order.selectedIngredients}
-              onIngredientChange={(ingredients) =>
-                handleChange("selectedIngredients", ingredients)
+          <div className="toppings-container">
+            <Toppings
+              id="toppings"
+              selectedtoppings={order.selectedToppings}
+              onToppingChange={(toppings) =>
+                handleChange("selectedToppings", toppings)
               }
-              error={errors.selectedIngredients}
+              error={errors.selectedToppings}
             />
           </div>
           <div className="order-note">
@@ -185,7 +193,7 @@ const PizzaForm = () => {
             <div className="order-box">
               <TotalPrice
                 basePrice={basePrice * order.count}
-                ingredientsPrice={ingredientsPrice}
+                toppingsPrice={toppingsPrice}
               />
               <button id="order-button" type="submit" onClick={handleSubmit}>
                 <strong>ORDER NOW</strong>
