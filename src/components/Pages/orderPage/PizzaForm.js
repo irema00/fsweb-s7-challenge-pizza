@@ -34,10 +34,7 @@ const PizzaForm = () => {
   const [order, setOrder] = useState(initialOrder);
   const [orderSummarySuccess, setOrderSummarySuccess] = useState("");
   const validationSchema = yup.object().shape({
-    count: yup
-      .number()
-      .required("Count is required.")
-      .min(1, "You must order at least 1 pizza."),
+    count: yup.number().min(1, "You must order at least 1 pizza."),
     selectedToppings: yup
       .array()
       .of(yup.string())
@@ -46,10 +43,7 @@ const PizzaForm = () => {
     size: yup.string().required("Please select a size."),
     dough: yup.string().required("Please select a crust type."),
     specialNote: yup.string(),
-    name: yup
-      .string()
-      .required("Name is required")
-      .min(2, "Name must be at least 2 characters long"),
+    name: yup.string().min(2, "Name must be at least 2 characters long"),
   });
 
   const validateInput = (name, value) => {
@@ -192,6 +186,7 @@ const PizzaForm = () => {
             />
             <div className="order-box">
               <TotalPrice
+                id="total"
                 basePrice={basePrice * order.count}
                 toppingsPrice={toppingsPrice}
               />
