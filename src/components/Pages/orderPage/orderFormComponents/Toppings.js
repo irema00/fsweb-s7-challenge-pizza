@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../PizzaForm.css";
 
 const toppingList = [
@@ -26,8 +26,11 @@ const Toppings = ({ onToppingChange, error }) => {
     } else {
       setToppings(toppings.filter((t) => t !== topping));
     }
-    onToppingChange(toppings);
   };
+
+  useEffect(() => {
+    onToppingChange(toppings);
+  }, [toppings]);
 
   return (
     <div className="toppings">
