@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Form } from "react-bootstrap";
 import axios from "axios";
@@ -21,10 +21,11 @@ const PizzaForm = () => {
     "This zesty codebase is topped with spicy JavaScript functions, CSS selectors with a kick, and React props that sizzle. Watch out for the hot API peppers, and debug your way through the melted cheese of syntax errors. It’s all served on a crispy framework crust, with a side of version control. A bite not for the faint of heart, daring you to commit to the spicy side of coding!";
   const [toppingsPrice, setToppingsPrice] = useState(0);
   const [errors, setErrors] = useState({});
+  const [currentOrder, setCurrentOrder] = useState([]);
 
   const initialOrder = {
     count: 1,
-    selectedToppings: [],
+    toppings: [],
     size: "",
     dough: "",
     specialNote: "",
@@ -35,7 +36,7 @@ const PizzaForm = () => {
   const [orderSummarySuccess, setOrderSummarySuccess] = useState("");
   const validationSchema = yup.object().shape({
     count: yup.number().min(1, "You must order at least 1 pizza."),
-    selectedToppings: yup
+    toppings: yup
       .array()
       .of(yup.string())
       .min(4, "You must select at least 4 toppings.")
@@ -71,7 +72,7 @@ const PizzaForm = () => {
     setOrder(updatedOrder);
     validateInput(name, value);
 
-    if (name === "selectedToppings") {
+    if (name === "toppings") {
       const toppingsCount = value.length;
       const updatedPrice = toppingsCount * 5;
       setToppingsPrice(updatedPrice);
@@ -92,7 +93,7 @@ const PizzaForm = () => {
       const orderSummary = {
         PizzaSelection: "Dev's Daredevil Slice",
         Size: order.size,
-        Toppings: order.selectedToppings,
+        Toppings: order.toppings,
         CrustType: order.dough,
         SpecialNote: order.specialNote,
         Count: order.count,
@@ -108,7 +109,6 @@ const PizzaForm = () => {
         .then((res) => {
           console.log("API response", res.data);
           setOrderSummarySuccess(res.data);
-          history.push("/pizza-success");
         })
         .catch((err) => {
           console.log("POST error", err);
@@ -159,11 +159,9 @@ const PizzaForm = () => {
           <div className="toppings-container">
             <Toppings
               id="toppings"
-              selectedtoppings={order.selectedToppings}
-              onToppingChange={(toppings) =>
-                handleChange("selectedToppings", toppings)
-              }
-              error={errors.selectedToppings}
+              toppings={order.toppings}
+              onToppingChange={(toppings) => handleChange("toppings", toppings)}
+              error={errors.toppings}
             />
           </div>
           <div className="order-note">
@@ -187,7 +185,8 @@ const PizzaForm = () => {
             <div className="order-box">
               <TotalPrice
                 id="total"
-                basePrice={basePrice * order.count}
+                count={order.count}
+                basePrice={basePrice}
                 toppingsPrice={toppingsPrice}
               />
               <button id="order-button" type="submit" onClick={handleSubmit}>
