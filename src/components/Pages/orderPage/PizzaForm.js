@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Form } from "react-bootstrap";
 import axios from "axios";
@@ -21,11 +21,10 @@ const PizzaForm = () => {
     "This zesty codebase is topped with spicy JavaScript functions, CSS selectors with a kick, and React props that sizzle. Watch out for the hot API peppers, and debug your way through the melted cheese of syntax errors. It’s all served on a crispy framework crust, with a side of version control. A bite not for the faint of heart, daring you to commit to the spicy side of coding!";
   const [toppingsPrice, setToppingsPrice] = useState(0);
   const [errors, setErrors] = useState({});
-  const [currentOrder, setCurrentOrder] = useState([]);
 
   const initialOrder = {
     count: 1,
-    toppings: [],
+    selectedToppings: [],
     size: "",
     dough: "",
     specialNote: "",
@@ -36,7 +35,7 @@ const PizzaForm = () => {
   const [orderSummarySuccess, setOrderSummarySuccess] = useState("");
   const validationSchema = yup.object().shape({
     count: yup.number().min(1, "You must order at least 1 pizza."),
-    toppings: yup
+    selectedToppings: yup
       .array()
       .of(yup.string())
       .min(4, "You must select at least 4 toppings.")
@@ -53,7 +52,7 @@ const PizzaForm = () => {
       .validate(value)
       .then((valid) => {
         console.log("validateInput", valid);
-        setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
+        setErrors({ ...errors, [name]: "" });
       })
       .catch((err) => {
         const newErrors = {
@@ -70,18 +69,20 @@ const PizzaForm = () => {
       [name]: value,
     };
     setOrder(updatedOrder);
-    validateInput(name, value);
 
-    if (name === "toppings") {
+    if (name === "selectedToppings") {
       const toppingsCount = value.length;
-      const updatedPrice = toppingsCount * 5;
+      const updatedPrice = parseFloat((toppingsCount * 5).toFixed(2));
       setToppingsPrice(updatedPrice);
-    }
 
-    setErrors((prevErrors) => ({
-      ...prevErrors,
-      [name]: "",
-    }));
+      if (name === "selectedToppings" && value.length > 0)
+        validateInput(name, value);
+    } else {
+      if (value.length > 0) {
+        validateInput(name, value);
+      }
+    }
+    setErrors({ ...errors, [name]: "" });
   };
 
   const handleSubmit = async (e) => {
@@ -93,7 +94,7 @@ const PizzaForm = () => {
       const orderSummary = {
         PizzaSelection: "Dev's Daredevil Slice",
         Size: order.size,
-        Toppings: order.toppings,
+        Toppings: order.selectedToppings,
         CrustType: order.dough,
         SpecialNote: order.specialNote,
         Count: order.count,
@@ -109,6 +110,7 @@ const PizzaForm = () => {
         .then((res) => {
           console.log("API response", res.data);
           setOrderSummarySuccess(res.data);
+          history.push("/pizza-success");
         })
         .catch((err) => {
           console.log("POST error", err);
@@ -159,14 +161,17 @@ const PizzaForm = () => {
           <div className="toppings-container">
             <Toppings
               id="toppings"
-              toppings={order.toppings}
-              onToppingChange={(toppings) => handleChange("toppings", toppings)}
-              error={errors.toppings}
+              selectedtoppings={order.selectedToppings}
+              onToppingChange={(toppings) =>
+                handleChange("selectedToppings", toppings)
+              }
+              error={errors.selectedToppings}
             />
           </div>
           <div className="order-note">
             <NameInput
               id="name"
+              name="name"
               onNameChange={(name) => handleChange("name", name)}
               error={errors.name}
             />
