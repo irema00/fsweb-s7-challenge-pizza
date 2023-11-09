@@ -61,8 +61,11 @@ describe("PizzaForm E2E Tests", () => {
   it("calculates the total price correctly", () => {
     const basePrice = parseFloat(85.5);
     const toppingPrice = 5;
+    cy.get("#counter-right").click();
+    cy.get(".counter-container span").should("contain", "2");
     cy.get("#topping-0").check();
-    const expectedTotal = (basePrice + toppingPrice).toFixed(2);
+    cy.get("#topping-1").check();
+    const expectedTotal = 2 * (basePrice + toppingPrice * 2).toFixed(2);
     cy.get("#total").should("contain", expectedTotal + "₺");
   });
   it("restricts the user from selecting more than 10 toppings", () => {
