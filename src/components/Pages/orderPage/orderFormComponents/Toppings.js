@@ -17,28 +17,18 @@ const toppingList = [
   "Garlic",
   "Mozzarella",
 ];
-const Toppings = ({ selectedToppings, onToppingChange, error }) => {
-  const validSelectedToppings = Array.isArray(selectedToppings)
-    ? selectedToppings
-    : [];
-
-  const [toppings, setToppings] = useState(() => {
-    const toppingInitial = {};
-
-    toppingList.forEach((topping) => {
-      toppingInitial[topping] = validSelectedToppings.includes(topping);
-    });
-
-    return toppingInitial;
-  });
+const Toppings = ({ onToppingChange, error }) => {
+  const [toppings, setToppings] = useState([]);
 
   const toppingSelect = (e, topping) => {
-    const newToppings = { ...toppings, [topping]: e.target.checked };
-    setToppings(newToppings);
-    onToppingChange(
-      Object.keys(newToppings).filter((topping) => newToppings[topping])
-    );
+    if (e.target.checked) {
+      setToppings([...toppings, topping]);
+    } else {
+      setToppings(toppings.filter((t) => t !== topping));
+    }
+    onToppingChange(toppings);
   };
+
   return (
     <div className="toppings">
       <h4>Toppings</h4>
