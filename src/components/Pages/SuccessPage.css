@@ -1,37 +1,100 @@
+/*Renk Kodları
+Sarı #FDC913, Açık Gri: #5F5F5F, Koyu Gri #292929, Kırmızı #CE2829, Bej: #FAF7F2 */
+
 @import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700&display=swap");
 
-.success{
-  background-color: #CE2829;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  text-align: center;
-  color: white;
-  gap: 8rem;
-  font-family: "Barlow Condensed",sans-serif;
-  color: white;
-  font-weight: 100;
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200&display=swap");
+
+ .success-container {
+	height:100%;
+	background-color: #ce2829;
+	color: white;
+	text-align: center;
+	padding-top:0.5rem;
+	align-content: center;
+	padding-left: 25%;
+	padding-right: 25%;
+	padding-bottom:5rem;
 }
-
-
-.header h3{
-  font-family: "Londrina Solid",sans-serif;
+.success-title {
+	font-family: "Londrina Solid",sans-serif;
   color:white;
   font-weight: normal;
   margin-top:50px;
-  font-size: 4vh;
-}
-.success-msg{
-  color: white;
-  font-family: "Barlow Condensed",sans-serif;
-  color: white;
-  font-weight: 100;
   font-size: 5vh;
-  margin-bottom: 1rem;
-  margin-top: 2rem;
 }
+.success-text {
+	margin-top: 5rem;
+	font-family: "Satisfy";
+	color: #fdc913;
+	font-size: 24px;
+	font-weight: lighter;
+}
+.success-msg h1{
+	font-size: 3rem;
+	font-family: "Barlow Condensed", serif;
+	font-weight: lighter;
+	padding-top:0;
+	margin-top:0;
+}
+.order-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.order-summary {
+	flex-direction: column;
+	justify-content: flex-start;
+	align-content: flex-start;
+	font-size: 20px;
+	border-top: 1px solid white;
+	margin-bottom: 4rem;
+}
+.order-summary h2{
+	font-family: "Barlow";
+	font-size:1.2rem;
+	margin-bottom:3.5rem;
+	font-weight: 500;
+}
+.order-summary p {
+	text-align: left;
+	padding-left: 18%;
+	font-family: "Barlow Condensed", serif;
+	font-size:0.8rem;
+	align-content: center;
+}
+.order-summary span {
+	font-weight: bolder;
+}
+.order-total-price {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid white;
+	border-radius: 5px;
+	padding: 0% 10%;
+	font-size: 16px;
+	font-weight: bolder;
+	align-items: flex-start;
 
-
-
+}
+.order-total2{
+	display:flex;
+	align-items:flex-start;
+	gap:1rem;	
+}
+.order-total2 p {
+	display:flex;
+	font-family: "Barlow";
+	font-weight: lighter;
+}
+.order-total2 span {
+	display:flex;
+	font-family: "Barlow";
+	font-weight: bold;
+	justify-self: flex-end;
+	margin:0.8rem;
+	}
