@@ -1,13 +1,15 @@
 import { NavLink as RouterNavLink } from "react-router-dom";
 import styled from "styled-components";
 import React from "react";
+
 const HeaderContainer = styled.div`
   height: 10rem;
   background-color: #ce2829;
   justify-content: center;
+  alighn-content: center;
   display: flex;
   color: #fff;
-  display: flex;
+  overflow: hidden;
 `;
 
 const Title = styled.h3`
@@ -25,7 +27,7 @@ const Title = styled.h3`
 const Nav = styled.nav`
   display: flex;
   list-style-type: none;
-  width: 650px;
+
   gap: 0.5rem;
   @media (max-width: 500px) {
     text-align: center;
@@ -36,7 +38,7 @@ const Nav = styled.nav`
 const Container = styled.nav`
   display: flex;
   flex-direction: column;
-  max-width: 800px;
+  max-width: 600px;
   align-items: flex-start;
 `;
 const NavLink = styled(RouterNavLink)`
@@ -56,7 +58,7 @@ const NavLink = styled(RouterNavLink)`
 function Header() {
   return (
     <>
-      <HeaderContainer className="home-header">
+      <HeaderContainer>
         <Container>
           <Title>Teknolojik Yemekler</Title>{" "}
           <Nav>
