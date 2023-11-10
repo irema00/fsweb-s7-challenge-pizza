@@ -51,7 +51,7 @@ const Toppings = ({ onToppingChange, error }) => {
                   onChange={(e) => toppingSelect(e, topping)}
                 />
                 <label htmlFor={toppingId}>{topping}</label>
-              </li>{" "}
+              </li>
             </div>
           );
         })}

@@ -12,7 +12,6 @@ function OrderNote({ onNoteChange, error }) {
   return (
     <>
       <label htmlFor="order-note">
-        {" "}
         <h4>Special Instruction</h4>
       </label>
       <input
