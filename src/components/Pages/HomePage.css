@@ -6,7 +6,6 @@ Sarı #FDC913, Açık Gri: #5F5F5F, Koyu Gri #292929, Kırmızı #CE2829, Bej: #
 
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@200&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200&display=swap");
 
@@ -18,7 +17,7 @@ Sarı #FDC913, Açık Gri: #5F5F5F, Koyu Gri #292929, Kırmızı #CE2829, Bej: #
   align-items: center;
   flex-direction: column;
   background-position:center ;
-  background-size:cover;
+  background-size:initial;
   background-repeat: no-repeat;
   min-height: 100vh;
   justify-content: flex-start;
@@ -58,3 +57,184 @@ margin-top:2rem;
  font-family: "Barlow",sans-serif;
   font-weight: bold;
 }
+
+.home-menu-bar{
+  display:flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 0 7rem;
+  align-content:center;
+}
+.home-menu-bar-item{
+  display:flex;
+  align-items: center;
+  margin-top:1rem;
+  gap: 1rem;
+  background-color: white;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.advertisement{
+  display:flex;
+  gap:1rem;
+  margin-top:2rem;
+  padding: 4rem 10rem;
+  background-color:#FAF7F2 ;
+
+}
+.advertisement button{
+  background-color: fff;
+  border:fff 1px solid;
+  border-radius: 40px;
+  padding: 0rem 3rem; 
+  font-family: "Barlow",sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.box1 {
+  display:flex;
+  background-image: url("../../Assets/adv-aseets/kart-1.png") ;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  color:white;
+  font-family: "Barlow",sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  flex: 1 1;
+}
+
+.box2 {
+  display:flex;
+  font-family: "Barlow",sans-serif;
+  color:white;
+  font-weight: normal;
+  background-image: url("../../Assets/adv-aseets/kart-2.png") ;
+  border-radius: 8px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  align-items: baseline;
+  background-position: center;
+}
+
+ button#order-now {
+  display: inline-block;
+  background-color: white;
+  color: #ce2829;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: "Barlow";
+  font-weight: 600;
+  font-size: 0.8rem;
+} 
+
+.box3 {
+  display:flex;
+  background-image: url("../../Assets/adv-aseets/kart-3.png") ;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  font-family: "Barlow",sans-serif;
+  background-size: cover;
+  flex-direction: column;
+  align-items: baseline;
+  background-position: center;
+}
+.box3 span{
+  color:#ce2829;
+}
+
+/* .box2 button{
+} */
+
+.row{
+  margin-top: 2rem;
+  display:flex;
+  flex-direction: row;
+  background-color: #FAF7F2;
+  justify-content: center;
+  gap:1rem;
+  border-radius: 10px;
+  justify-content: space-evenly;
+  background-color:green;
+  
+  
+}
+.column{
+  display:flex;
+  flex-direction: column;
+  flex: 1 1;
+  gap:1rem;
+  
+}
+.catchphrase{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:#FAF7F2 ;
+}
+
+.catchphrase p {
+  font-family: "Satisfy", sans-serif;
+  color: #ce2829;
+  margin:0;
+}
+
+.catchphrase h1 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  color: black;
+  margin-top: 0.5rem;
+}
+
+.column-bottom{
+  text-align:center;
+  justify-content: center;
+  flex-direction: column;;
+}
+.pizza-options{
+  display:flex;
+  justify-content: center;
+  padding:4rem 10rem;
+  gap:1rem;
+  background-color: #FAF7F2;
+}
+.option{
+  display:flex;
+  background-color: white;
+  border-radius: 10px;
+  padding-bottom: 3rem;
+  flex-wrap: wrap;
+
+}
+.option img{
+  width:250px;
+  padding: 0 2rem;
+}
+footer
+{background-color: #292929;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-family: "Barlow Condensed";
+}
+.icon{
+  display: flex;
+  align-items: center;
+}
+.instagram{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+
+  
