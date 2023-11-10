@@ -110,7 +110,7 @@ const PizzaForm = () => {
         .then((res) => {
           console.log("API response", res.data);
           setOrderSummarySuccess(res.data);
-          history.push("/pizza-success");
+          history.push("/pizza-success", { orderSummary: orderSummary });
         })
         .catch((err) => {
           console.log("POST error", err);
